@@ -28,7 +28,7 @@ const CommentForm = ({ campsiteId }) => {
             </Button>
             <Modal isOpen={modalOpen}>
                 <ModalHeader toggle={() => setModalOpen(false)}>
-                    Ad Comment
+                    Add Comment
                 </ModalHeader>
                 <ModalBody>
                     <Formik
@@ -50,7 +50,7 @@ const CommentForm = ({ campsiteId }) => {
                                     as='select'
                                     className='form-control'
                                 >
-                                    <option>Select...</option>
+                                    <option value=''>Select...</option>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
