@@ -10,12 +10,10 @@ import {
     Button
 } from 'reactstrap';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
-import defaultAvatar from '../../app/assets/img/unicorn.png';
 import { validateUserLoginForm } from '../../utils/validateUserLoginForm';
-
+import defaultAvatar from '../../app/assets/img/unicorn.png';
 
 const UserLoginForm = () => {
-
     const [loginModalOpen, setLoginModalOpen] = useState(false);
 
     const currentUser = useSelector(selectCurrentUser);
@@ -28,11 +26,11 @@ const UserLoginForm = () => {
             avatar: defaultAvatar,
             username: values.username,
             password: values.password
-        }
+        };
 
-        dispatch(setCurrentUser(currentUser))
-
+        dispatch(setCurrentUser(currentUser));
         setLoginModalOpen(false);
+
     }
 
     return (
@@ -88,15 +86,14 @@ const UserLoginForm = () => {
                                     {(msg) => <p className='text-danger'>{msg}</p>}
                                 </ErrorMessage>
                             </FormGroup>
-                            <Button type='submit' color='primary' Login>Login</Button>
+                            <Button type='submit' color='primary' >Login</Button>
                         </Form>
                     </Formik>
                 </ModalBody>
-
             </Modal>
         </>
     )
 
-}
+};
 
 export default UserLoginForm;
