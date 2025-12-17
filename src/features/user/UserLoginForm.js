@@ -23,14 +23,14 @@ const UserLoginForm = () => {
     const dispatch = useDispatch();
 
     const handleLogin = (values) => {
-        const currentUser = {
+        const newUser = {
             id: Date.now(),
             avatar: defaultAvatar,
             username: values.username,
             password: values.password
         }
 
-        dispatch(setCurrentUser(currentUser))
+        dispatch(setCurrentUser(newUser))
 
         setLoginModalOpen(false);
     }
@@ -83,12 +83,12 @@ const UserLoginForm = () => {
                                 <Label htmlFor='password'>
                                     Password
                                 </Label>
-                                <Field id='password' name='password' placeholder='Password' className='form-control' />
+                                <Field type='password' id='password' name='password' placeholder='Password' className='form-control' />
                                 <ErrorMessage name='password'>
                                     {(msg) => <p className='text-danger'>{msg}</p>}
                                 </ErrorMessage>
                             </FormGroup>
-                            <Button type='submit' color='primary' Login>Login</Button>
+                            <Button type='submit' color='primary' >Login</Button>
                         </Form>
                     </Formik>
                 </ModalBody>
