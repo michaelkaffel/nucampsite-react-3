@@ -12,13 +12,13 @@ const dispatch = useDispatch();
 
     const handleSubmit = (values) => {
         const comment = {
-            id: values.id,
+            
             campsiteId: parseInt(campsiteId),
             rating: parseInt(values.rating),
             text: values.commentText,
             author: values.author,
             date: new Date(Date.now()).toISOString(),
-            key: Math.floor(Math.random() * 1000)
+            
         };
         console.log('comment:', comment);
         dispatch(postComment(comment))
